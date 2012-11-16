@@ -30,14 +30,12 @@ import org.ow2.play.governance.api.bean.Topic;
 import org.ow2.play.platform.api.APIException;
 import org.ow2.play.platform.api.bean.Subscription;
 import org.ow2.play.platform.api.bean.SubscriptionResult;
-import org.ow2.play.platform.client.api.ClientException;
 import org.ow2.play.service.registry.api.Constants;
 import org.ow2.play.service.registry.api.Registry;
 import org.ow2.play.service.registry.api.RegistryException;
 import org.petalslink.dsb.cxf.CXFHelper;
 
 import com.google.common.collect.Lists;
-import com.google.common.eventbus.Subscribe;
 import com.sun.istack.logging.Logger;
 
 /**

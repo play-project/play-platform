@@ -96,11 +96,18 @@ public class PlatformClient implements
 	 * org.ow2.play.platform.client.api.PlatformClient#getSubscriptionManager()
 	 */
 	@Override
-	public synchronized SubscriptionService getSubscriptionManager() {
+	public synchronized SubscriptionService getSubscriptionManager() throws ClientException {
+		checkConnected();
 		if (subscriptionManager == null) {
 			subscriptionManager = new SubscriptionServiceImpl();
 		}
 		return subscriptionManager;
+	}
+	
+	private void checkConnected() throws ClientException {
+		if (apiEndpoint == null) {
+			throw new ClientException("Please connect first");
+		}
 	}
 
 	class SubscriptionServiceImpl implements SubscriptionService {

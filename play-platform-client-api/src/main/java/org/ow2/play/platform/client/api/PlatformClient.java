@@ -37,7 +37,8 @@ public interface PlatformClient {
 	/**
 	 * 
 	 * @return
+	 * @throws ClientException 
 	 */
-	SubscriptionService getSubscriptionManager();
+	SubscriptionService getSubscriptionManager() throws ClientException;
 
 }

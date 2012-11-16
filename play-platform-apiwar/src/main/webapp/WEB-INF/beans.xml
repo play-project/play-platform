@@ -30,7 +30,9 @@
 		<property name="url" value="http://localhost:8080/registry/RegistryService"/>
 	</bean>
 
-	<bean id="api" class="org.ow2.play.platform.api.service.API"/>
+	<bean id="api" class="org.ow2.play.platform.api.service.API">
+		<property name="registry" ref="serviceregistry"/>
+	</bean>
 	
 	<bean id="api-subscriptionservice" class="org.ow2.play.platform.api.service.SubscriptionService">
 		<property name="registry" ref="serviceregistry"/>
